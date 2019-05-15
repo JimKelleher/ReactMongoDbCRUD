@@ -1,0 +1,13 @@
+/* Responsive design: */
+
+.innerStyleFullSize {
+    top: 15%;
+    left: 25%;
+    right: 25%;
+    bottom: 25%
+}
+
+.innerStylePhoneSize {
+    top: 0px;
+    left: 0px;
+}
