@@ -1,0 +1,87 @@
+
+36 total:
+
+1940
+	Classic		Frank Sinatra
+1950
+	Classic		Henry Mancini
+	Country		Johnny Cash
+	Pop 		Ricky Nelson
+	Rock		Buddy Holly
+	Soul/R&B		Little Richard
+1960
+	Classic		Bobby Darin
+	Country		Charlie Rich
+	Pop 		Tom Jones
+	Rock		The Who
+	Soul/R&B		Sly and the Family Stone
+1970
+	Classic		Jimmy Webb
+	Country		Kris Kristofferson
+	Pop 		ABBA
+	Reggae		Bob Marley
+	Rock		Elton John
+	Soul/R&B		Barry White
+1980
+	Chill/Downtempo	Delerium
+	Country		Lyle Lovett	
+	Pop 		The B-52's
+	Rock		The Pretenders
+	Soul/R&B		Anita Baker
+1990
+	Chill/Downtempo	The Cardigans
+	Classic		Sarah Brightman
+	Country		Dixie Chicks
+	Pop 		Seal
+	Rock		No Doubt
+	Soul/R&B		Collective Soul
+2000
+	Chill/Downtempo	Zero 7
+	Pop 		Jem
+	Reggae		Ziggy Marley
+	Rock		Coldplay
+	Soul/R&B		Kelly Rowland
+2010
+
+	Chill/Downtempo	Above & Beyond
+	Pop 		Adele
+	Rock		Foster the People
+
+----------------------------------------------------
+
+ABBA
+Above & Beyond
+Adele
+Anita Baker
+Barry White
+Bob Marley
+Bobby Darin
+Buddy Holly
+Charlie Rich
+Coldplay
+Collective Soul
+Delerium
+Dixie Chicks
+Elton John
+Foster the People
+Frank Sinatra
+Henry Mancini
+Jem
+Jimmy Webb
+Johnny Cash
+Kelly Rowland
+Kris Kristofferson
+Little Richard
+Lyle Lovett
+No Doubt
+Ricky Nelson
+Sarah Brightman
+Seal
+Sly and the Family Stone
+The B-52's
+The Cardigans
+The Pretenders
+The Who
+Tom Jones
+Zero 7
+Ziggy Marley

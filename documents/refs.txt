@@ -1,0 +1,57 @@
+----------------------------------------------------------------
+
+regarding next section: STOP - DON'T DO
+
+First use of refs produced error:
+
+	Uncaught Error: Element ref was specified as a string (radio) but no owner was set. 
+	This could happen for one of the following reasons:
+
+
+	1. You may be adding a ref to a function component
+
+	2. You may be adding a ref to a component that was not created inside a component's render method
+
+	3. You have multiple copies of React loaded
+
+
+	The above error occurred in the <AnimatedRadio> component:
+
+Reason is PROBABLY because of my funky re-load of:
+
+	loadJsBundle() {
+		
+		// Reload the full React bundle script:
+		var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.src = 'bundle.js';
+		head.appendChild(script);
+
+	}
+
+
+I will replace the ref usage with simple getElementById().
+
+----------------------------------------------------------------
+
+DO THIS - I HAVE REVIEWED:
+
+https://stackoverflow.com/questions/37273876/reactjs-this-refs-vs-document-getelementbyid
+
+In general, refs is better than document.getElementById, because it is more in line with the rest of your react code.
+
+In react, every component class can have multiple component instances.
+And as @Isuru points out in comments: using id is dangerous, because react does not prevent you to have multiple forms on 1 page, and then your DOM contains multiple inputs with same ID. And that is not allowed.
+
+Another advantage to using refs, is that by design, you can only access the refs in the context where you define it. This forces you to use props and state (and possibly stores) if you need to access info outside of this context.
+And this an advantage, because there is less/ no chance of you breaking your unidirectional data flow, which would make your code less manageable.
+
+NB: In almost all cases, refs can be avoided altogether. It is a design principle for Netflix to use no refs, ever, as explained by Steve McGuire (Senior User Interface Engineer at Netflix) in this video 
+
+https://www.youtube.com/watch?v=kDARP5QZ6nU&list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY&index=28
+
+from reactjs conf 2016 (9:58m into the video).
+
+In your case, this would mean putting the email-input value in state of the form, add on onChange handler, and use the state value in the submit event.
+
+-----------------------------------------------------------

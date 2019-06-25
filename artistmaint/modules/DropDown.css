@@ -1,0 +1,149 @@
+ul {
+  list-style: none;
+}
+
+.DropDownDown {
+  position: fixed;
+  z-index: 9;
+  list-style: none;
+
+}
+
+.nav {
+  display: inline-block;
+  text-align: center;
+  margin: 0px 10px;
+}
+.nav li:hover {
+  background: #ddd;                 /* hover color */
+  border: 1px solid #777;
+}
+
+.nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  background: #ccc;                 /* regular color */
+  border: 1px solid #777;
+  
+  border-radius: 5px;
+  color: var(--mainColor);
+
+  margin-top: 0px;
+  
+}
+.nav > ul > li {
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+  cursor: pointer;
+
+}
+
+ul.drop-menu {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+}
+ul.drop-menu li {
+  background: #ccc; /* regular color */
+  border: 1px solid #777;
+}
+ul.drop-menu li:hover {
+  background: #ddd; /* hover color */
+  border: 1px solid #777;
+}
+ul.drop-menu li:first-child {
+  border-radius: 2px 2px 0 0;
+}
+ul.drop-menu li:last-child {
+  border-radius: 0 0 5px 5px;
+}
+ul.drop-menu li {
+  display: none;
+}
+li:hover > ul.drop-menu li {
+  display: block;
+}
+/* ---------------------------------------------------- */
+li:hover > ul.drop-menu.menu-5 {
+  perspective: 1000px;
+}
+li:hover > ul.drop-menu.menu-5 li {
+  transform-origin: Xtop center;
+  opacity: 0;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(1) {
+  animation-name: menu-5;
+  animation-duration: 150ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(2) {
+  animation-name: menu-5;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(3) {
+  animation-name: menu-5;
+  animation-duration: 450ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(4) {
+  animation-name: menu-5;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(5) {
+  animation-name: menu-5;
+  animation-duration: 750ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(6) {
+  animation-name: menu-5;
+  animation-duration: 900ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+/* ---------------------------------------------------- */
+li:hover > ul.drop-menu.menu-5 li:nth-child(7) {
+  animation-name: menu-5;
+  animation-duration: 1050ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(8) {
+  animation-name: menu-5;
+  animation-duration: 1200ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+li:hover > ul.drop-menu.menu-5 li:nth-child(9) {
+  animation-name: menu-5;
+  animation-duration: 1350ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+/* ---------------------------------------------------- */
+@keyframes menu-5 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

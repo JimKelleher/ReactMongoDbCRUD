@@ -1,0 +1,65 @@
+
+CardStackIndex
+
+	add(id, decade, genre, image)
+
+
+CardStack
+
+	delete(index)
+
+	deleteSaveDatabase(id)
+
+	deleteSaveProcess(index, id)
+
+
+CardStack
+	ArtistPopup
+
+		add
+
+		addSaveDatabase(id, decade, genre, ximage)
+
+		addSaveProcess(id, decade, genre, ximage)
+
+
+		edit(index, id, decade, genre, ximage)
+
+		editSaveDatabase(index, id, decade, genre, ximage)
+
+		editSaveProcess(index, id, decade, genre, ximage)
+
+
+		saveProcess(id, decade, genre, ximage)
+
+-----------------------------------------------------------------------------------------
+
+saveProcess
+
+	editSaveProcess
+
+		editSaveDatabase
+
+		edit
+
+			updates artist.artists
+
+			re-render
+
+	addSaveProcess
+
+		addSaveDatabase
+
+		add
+
+
+-----------------------------------------------------------------------------------------
+
+deleteSaveProcess 	
+
+	deleteSaveDatabase
+	
+	delete
+
+-----------------------------------------------------------------------------------------
+

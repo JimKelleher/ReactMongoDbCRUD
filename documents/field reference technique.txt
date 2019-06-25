@@ -1,0 +1,10 @@
+
+<CardStackIndex
+	<CardStack
+		<ArtistPopup		
+			constructor() {
+    				this.transaction = "";
+    				this.index = -1;
+		toggleArtistPopupShow()
+			ArtistPopup.transaction = transaction;
+			ArtistPopup.index = index;

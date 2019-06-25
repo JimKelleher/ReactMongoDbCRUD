@@ -1,0 +1,114 @@
+
+radio button animation
+
+	SodaPop - https://codepen.io/sodapop/
+
+	https://codepen.io/sodapop/pen/GpgEeE/
+
+--------------------------------------------------------------------------------------
+
+Above app was the genesis of the idea of this animated radio button concept.
+
+It involved 2 main technologies: 1) animation (I've done before) and 2) Font Awesome.
+
+I wasted a HUGE amount of time trying to adapt the prototype for my usage but
+ultimately I failed.  The tipoff (I missed) was in SodaPop's original demo:
+
+1) click radio button - animation runs
+2) minimze app
+3) restore app  - animation runs again - WTF??
+
+My solution for this was to 1) run animation and 2) swap in a non-animation
+version of the radio button.  
+
+SodaPop used a huge amount of CSS code ("app" is entirely CSS) which took me much
+time to sort through.  
+
+The main technique he used was to render Font Awesome icons as CSS generated
+animations associated with PSEUDO ELEMENTS (eg: BEFORE / AFTER).
+
+This turned out to be a bad decision since pseudo elements can only be associated with
+container level elements.  Input, image elements are NOT container level.  He worked 
+around this by putting inputs INSIDE their labels and associating the pseudo
+elements/icons with the labels.  Unfortunately the resulting "animal" was uncontrollable
+by me and caused a huge time-drain trying to do so.
+
+Along the way I investigated upgrading from FA 4 to FA 5 to see if I had any more
+flexibility.  In the process I discovered that I somehow "lost" one of the key icons that
+I needed (the check mark)!  WTF?  I had to abandon FA 5 all together.  If I'm ever
+required to upgrade, this matter must be resolved.
+
+NOTE: I employed the "Upgrade Shim" technique (the first step)
+
+NOTE 2: See "background color hacks" for employing this technique on FA
+
+https://stackoverflow.com/questions/26516353/font-awesome-background-color
+
+--------------------------------------------------------------------------------------
+
+https://www.smashingmagazine.com/2011/07/learning-to-use-the-before-and-after-pseudo-elements-in-css/
+
+https://webdesign.tutsplus.com/articles/css3-transitions-and-transforms-from-scratch--webdesign-4975
+
+https://cdn.tutsplus.com/webdesign/uploads/legacy/articles/042_css_animation_intro/demo.html/index5.html?_ga=2.147907191.190731761.1545162355-909521712.1545162355
+
+--------------------------------------------------------------------------------------
+
+animation in span
+
+	https://stackoverflow.com/questions/6881045/css-animations-on-span
+
+	I am trying to apply a CSS animation to a <span> element and I just can't get it to work.
+
+	may be you have to define display:block in your css for span 
+
+	put up the code in the edit. It does work when I specify display:block;
+
+TRUE: I tried it: https://www.w3schools.com/csSref/tryit.asp?filename=trycss3_animation
+
+http://jsfiddle.net/jdmiller82/XWkRX/1/
+
+--------------------------------------------------------------------------------------
+
+https://stackoverflow.com/questions/7396469/why-dont-before-and-after-pseudo-elements-work-with-img-elements
+
+--------------------------------------------------------------------------------------
+
+Upgrading from Version 4
+
+https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4
+
+Upgrade Shims
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/v4-shims.css">
+
+stopped upgrade from 4.4 to 5 because I lost the checkmark char (stand alone)
+
+--------------------------------------------------------------------------------------
+
+font awesome w3school
+
+document.getElementById("anim").style.animationPlayState="paused";
+
+stacking icons:
+
+	https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+CardStackIndexInstance.artists usages
+
+ArtistPopup
+
+	all fields									CHG'D to this.props.artists
+
+CardStack
+
+	this.state = {
+		artists: CardStackIndexInstance.artists					CHG'D to this.props.artists
+	};
+
+	case CardStackIndexInstance.artists.length - 1: // the last entry			CHG'D to this.state.artists
+		entries_after_clicked = 0;
+		break;
+
+
+CardStackIndex
+
+	<CardStack
+		height={cardstack_header_height * CardStackIndexInstance.artists.length}	CHG'D TO THIS
+
+		CardStackIndexInstance.artists.map(					CHG'D TO THIS
+
+
+
+	add - var newIndex = CardStackIndexInstance.artists.length;			 CHG'D to artist.artists
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+CSI usages other than CSI.artists
+
+CardDetail
+
+	CardStackIndexInstance.deleteButtonX = offsetLeftX;				CHG'D TO this.props.parent
+	CardStackIndexInstance.deleteButtonY = offsetTopY;				CHG'D TO this.props.parent
+
+CardStackIndex
+
+	CardStackIndexInstance.windowScrollBy(newIndex);				CHG'D TO this.parent.props.parent	
+
+	CardStackIndexInstance.openCardProps = props;					CHG'D TO THIS
+
+	onClick={() => CardStackIndexInstance.headerClick(props)}				CHG'D TO props.parent
+	imageDimension={CardStackIndexInstance.HEADER_IMAGE_HEIGHT}		CHG'D TO props.parent
+
+DeleteButtonWithConfirm
+
+	this.state = {
+      		deleteButtonX: CardStackIndexInstance.deleteButtonX,			CHG'D to this.props.parent
+      		deleteButtonY: CardStackIndexInstance.deleteButtonY,			CHG'D to this.props.parent
+
+    	};
+
+	// Close the open tab:							
+		CardStackIndexInstance.headerClick(					CHG'D to this.props.parent.props.parent
+      		CardStackIndexInstance.openCardProps				CHG'D to this.props.parent.props.parent
+	); 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+CS usages
+
+CardDetail
+
+	CardStackInstance.toggleDeletePopup(null, null, null);				MOVED FUNCTION & STATE FROM CS TO CSI
+
+	onClick={ () => {CardStackInstance.toggleArtistPopup("edit", this.props.index) }}	MOVED FUNCTION & STATE FROM CS TO CSI
+
+
+CardStackIndex
+
+	CSI.headerClick
+
+		CardStackInstance.selselectedArtistId = props.id;				MOVED FROM CS TO CSI
+		CardStackInstance.selselectedArtistIdMinusSpaces = props.idMinusSpaces;	MOVED FROM CS TO CSI
+		
+		CardStackInstance.handleCardClick(props.index);				UNIQUE: SAVED CS POINTER IN CSI AND CALLED VIA IT		HOW TO PASS UP?? <<<<<<<<<<<<<<<<<
+
+
+DeleteButtonWithConfirm
+
+	CardStackInstance.toggleDeletePopup(null, null, null); // @@@			CHG'D to this.props.parent
+
+	CardStackInstance.deleteSaveProcess (						CHG'D to this.props.parent
+      		artist.findArtist(CardStackInstance.selselectedArtistId),			CHG'D to this.props.parent
+      		CardStackInstance.selselectedArtistId,					CHG'D to this.props.parent
+      		CardStackInstance.selselectedArtistIdMinusSpaces			CHG'D to this.props.parent
+	);
+
+	CardStackInstance.toggleDeletePopup(null, null, null);				CHG'D to this.props.parent.props.parent
+
+

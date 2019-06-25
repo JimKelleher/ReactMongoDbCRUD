@@ -1,0 +1,93 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lesson learned:
+
+	If I pass in from level 1 CardStackIndex, I can pass all the way to basement, CardDetail
+
+	If I pass in from level 2 CardStack, I can't pass all the way to basement, CardDetail
+
+	Reason has to do w/ how the renders are built (show difference from test app).
+
+		https://jsfiddle.net/user/Jim_Kelleher/fiddles/
+
+			WORKS: 		
+
+			NO WORK: 	
+
+
+<ArtistMaint>
+	<CardStackApp>
+		<CardStackIndex>
+			<CardStack>
+				<DeleteButtonWithConfirm>
+				<Card>
+					<ArtistCard>
+						<li>
+							<CardDetail>
+
+
+NOTE: CardDetail's parent is CardStackIndex, thus no values can be passed from CardStack to CardDetail.
+If I wanted to do so, had to move objects to CardStackIndex.  I don't understand this other than the fact
+that all are rendered together (as noted, above).
+
+Good Test: pass in as argument:  parent={this}
+
+					<ArtistPopup
+						parent={this}						  					
+					/>
+
+run app, in debugger, go to constructor, see props and determine what is the parent's class name	
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<li id="li0" class="" style="position: absolute; top: 0px; width: 100%; cursor: pointer;	FROM: Card
+	transition: -webkit-transform 0.5s ease; background: rgb(43, 226, 97); 
+	transform: translate3d(0px, 0px, 0px); height: 85px; z-index: auto;">
+
+   <div style="position: absolute; top: 0px; color: rgb(0, 0, 0);">			FROM: TeamMemberCard
+
+      <header  								FROM: TeamMemberCard
+	class="card-header-details" 						FROM: TeamMemberCard/header
+	id="? and the Mysterians"  						FROM: TeamMemberCard/header
+	name="0"  							FROM: TeamMemberCard/header
+	style="								FROM: TeamMemberCard/header
+
+		display: flex;						FROM: CardStackIndex.styles.cardHeader
+		 justify-content: space-between; 				FROM: CardStackIndex.styles.cardHeader
+		align-items: center; 						FROM: CardStackIndex.styles.cardHeader		
+		color: rgb(255, 255, 255);					FROM: CardStackIndex.styles.cardHeader	
+ 		width: 600px; 						FROM: CardStackIndex.styles.cardHeader
+	"
+      >
+
+         <img src="http://www.workingweb.info/database/images/Artist/and the Mysterians.jpg"  				FROM: TeamMemberCard/img
+	style="width: 83px; height: 83px; border-radius: 100%;">
+
+         <div style="color: rgb(0, 0, 0);">  										FROM: TeamMemberCard/div
+            <h1 style="margin: 0px; font-weight: 500; font-size: 25px; text-align: right;">? and the Mysterians</h1>  		FROM: TeamMemberCard/div
+            <h3 style="margin: 4px 0px 0px; font-weight: 300; font-size: 17px; opacity: 0.8; text-align: right;">1960 POP 0</h3>  	FROM: TeamMemberCard/div
+         </div>
+
+      </header>
+
+      <div id="cardDetail" style="visibility: visible;">								FROM: TeamMemberCard/CardDetail
+         <table>												(all remaining)
+            <tbody>
+               <tr>
+                  <td class="buttonTd"><a href="javascript: dummy()" id="buttonEdit" class="button edit">Edit</a></td>
+                  <td><a href="javascript: dummy()" id="buttonDelete" class="button xdelete">Delete</a></td>
+                  <td><a href="javascript: dummy()" class="button add">Dummy</a></td>
+                  <td><button>Test</button></td>
+               </tr>
+            </tbody>
+         </table>
+         <img src="tab_discog.png">
+      </div>
+   </div>
+
+</li>
+
+
+
+
+
+
+

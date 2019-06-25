@@ -1,0 +1,99 @@
+-----------------------------------------------------------
+
+IE error:
+
+"Object doesn't support property or method 'assign'"
+
+When I replaced this code it failed (silently) because:
+
+	https://stackoverflow.com/questions/46767892/is-there-any-hack-for-ie-support-of-css-variable
+
+	"IE does not support variables. But you can use CSS preprocessors like LESS or SASS."
+
+FORGET IT.  Not going to overcomplicate with preprocessor just to satisfy IE.  This is a modern,
+showcase app.  Bye to IE.
+
+The app ran but the object widths (for which I use CSS variables) were wrong.
+
+-----------------------------------------------------------
+
+browser specific bugs, IE:
+
+- - - - - - - - - 
+Add artist:
+Object doesn't support property or method 'assign'
+
+Reason:
+<input style={Object.assign({}, inputStyles, imageStyles)} type="ximage" value=...
+
+- - - - - - - - - 
+Array.find():
+
+Fix:
+see, etc: "artistmaint SAT PM POLYFILL MIXED RESULTS"
+
+I used this:
+
+https://gist.github.com/paulirish/1579671
+
+cancelAnimationFrame
+
+requestAnimationFrame
+
+-----------------------------------------------------------
+
+add artist - scroll to addition - doesn't work in all  browsers
+
+oy - chrome fails: - reason: switch from offline to online - doesn't do a full init
+
+uncaught TypeError: Cannot read property 'attributes' of null
+
+// NOTE: At this point, after the re-render is complete, THIS = window.
+      // Get the newly entered row and scroll to it:inusSpaces).attributes[1].value));
+    }
+
+this.windowScrollBy(Number(document.getElementById("li" + idMinusSpaces).attributes[1].value));
+
+-----------------------------------------------------------
+
+IE press Add button - crashes right away:
+
+SCRIPT438: Object doesn't support property or method 'assign'
+
+artistpopup.jsx (359,7)
+
+- - - - - 
+
+-----------------------------------------------------------
+
+C:\a_dev\NodeJS\artistmaint>npm --version core-js/es6/map
+3.10.10
+
+C:\a_dev\NodeJS\artistmaint>npm --version core-js/es6/set
+3.10.10
+
+npm install core-js/es6/map
+
+npm install core-js/es6/set
+
+-----------------------------------------------------------
+
+https://reactjs.org/docs/javascript-environment-requirements.html
+
+https://babeljs.io/docs/en/babel-polyfill/
+
+npm install @babel/polyfill
+
+Because this is a polyfill (which will run before your source code), we need it to be a dependency, not a devDependency
+
+>npm --version @babel/polyfill
+3.10.10
+
+>npm uninstall @babel/polyfill
+
+-----------------------------------------------------------
+
+LAST TRY:
+
+https://www.npmjs.com/package/raf-stub
+

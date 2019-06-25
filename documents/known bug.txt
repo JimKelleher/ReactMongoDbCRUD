@@ -1,0 +1,45 @@
+
+ERROR:
+
+Happens on Edit Artist + Save
+
+Warning: Can't call setState (or forceUpdate) on an unmounted component. 
+This is a no-op, but it indicates a memory leak in your application. To fix, 
+cancel all subscriptions and asynchronous tasks in the componentWillUnmount
+method.
+    in CardStack (created by CardStackIndex)
+    in div (created by 
+CardStackIndex)
+    in CardStackIndex
+    in div
+
+-------------------------------------------------------------------------------------------------------
+
+none of the setStates triggered debugger
+
+must be the setTimeout (tho I tested that....)
+
+"To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method."
+
+-------------------------------------------------------------------------------------------------------
+
+3 thing related:
+
+1) fetch
+2) setState
+3) this error: Warning: Can't call setState...
+     Don't know what is producing the error - DETERMINE
+
+Happens on Edit Artist + Save
+
+SPENT A FULL DAY - can't:
+
+1) find cause of error
+2) fix error
+
+approaches taken:
+
+1) don't set state if unmounted
+2) cancel timeouts
+
+tried putting debugger on setState callback function

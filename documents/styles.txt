@@ -1,0 +1,190 @@
+
+In this app a conscious effort was made to "show off" on the GUI techniques so as to
+make this app a showcase.  I borrowed heavily from 3 separate original sources:
+
+CardStack - the main "card" based GUI
+
+Picture Buttons - for all buttons
+
+Delete With Confirm - for a snazzy "are you sure?" pop-up type window
+
+State of the art GUI techniques are best accomplished with CSS.  The original
+authors used different techniques and I freely modifed them as I saw fit.
+
+At present, the following techniques are employed:
+
+-----------------------------------------------------------------------------------------------------
+CardStack - Style Object Variables
+
+Eg:
+
+const cardStyles = {
+   ...styles,
+   background: this.props.background,
+   transform,
+   WebkitTransform: transform,
+   height: 85,
+};
+
+return (
+
+   <li
+      style={cardStyles}
+      o
+      o
+      o
+
+   </li>
+);
+
+-----------------------------------------------------------------------------------------------------
+Picture Buttons - Traditional CSS and CSS Pseudo Elements
+
+Eg:
+
+.add:before {
+    content: "\271A";
+}
+
+A custom button is created with an image "before" the text and the image
+specified by a hex/unicode value.
+
+   - See directory "fancy buttons" in tech folder
+   - See https://en.wikipedia.org/wiki/List_of_Unicode_characters#Additional_Latin_Extended
+
+-----------------------------------------------------------------------------------------------------
+Delete Button With Confirm - Very Fancy Animation using Class Switching, WebKit Transforms
+and Dynamic Style Object Variables
+
+==============
+Original Processing
+
+---------------------------------
+Class Switching Eg:
+
+handleDeleteClick(event) {
+
+   this.btnInnerFront.classList.remove('btn-inner-front');
+   this.btnInnerFront.classList.add(       'btn-inner-back');
+
+}
+
+---------------------------------
+WebKit Transforms Eg:
+
+.btn {
+
+   transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   transition: width 0.8s cubic-bezier(0.23, 1, 0.32, 1), height 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   transform-origin: 50% 50%;
+   transform-style: preserve-3d;
+   -webkit-transform-origin: 50% 50%;
+   -webkit-transform-style: preserve-3d; 
+}
+
+=======================
+My Adaptation (my invention!)
+
+---------------------------------
+Dynamic Style Object Variables
+
+this.state = {
+   BtnBackWidth: ''
+};
+
+enlargeDeleteButton() {
+
+   const ENLARGE_WIDTH = "250px";
+
+   this.setState({ 
+      BtnBackWidth: ENLARGE_WIDTH
+   });
+
+}
+
+const enlargeBtnBackStyles = {
+  width: this.state.BtnBackWidth,
+}
+
+return (
+   <div id="Btn" className="btn" style={enlargeBtnBackStyles} >
+   </div>
+);
+
+-----------------------------------------------------------------------------------------------------
+Summary
+
+In some cases, I left the CSS in traditional CSS format (as I found it).  In other cases,
+I brought the CSS "in-house", into React Style Object Variables.  The former uses
+state to affect changes, the latter uses traditional DOM access (outside React's
+control).  Ideally, I would have converted all CSS but it is very sophisticated and
+doesn't always have React equivalents:
+
+- There is no React equivalent of Class Switching outside of Open Source, 3rd party
+implementations or my own creation of one.  
+
+- There is no React equivalent of Pseudo Elements outside of Open Source, 3rd party
+implementations or my own creation of one.  
+
+- The WebKit transforms are very sophisticated and may, or may not, have survived
+such a conversion.
+
+My research taught me that such concessions to reality are not frowned upon in the
+React community.  Other, more important tasks beckoned.
+
+Why not bring the CSS in-house that I easily can and leave the rest in traditional
+CSS?  Then I would have 2 sets of CSS for each function, unnecessarily complicating
+my system.  
+
+-----------------------------------------------------------------------------------------------------
+Can Reactjs programmatically handle :before?
+
+   https://stackoverflow.com/questions/26070450/can-reactjs-programmatically-handle-before
+
+--------------------
+Using CSS :before and :after pseudo-elements with inline CSS?
+
+   https://stackoverflow.com/questions/14141374/using-css-before-and-after-pseudo-elements-with-inline-css/14141821#14141821
+
+--------------------
+CSS pseudo elements in React
+
+   https://stackoverflow.com/questions/28269669/css-pseudo-elements-in-react
+
+   "No need to waste cycles reinventing CSS in JS. Right tool for the right job."
+
+-------------------------------
+Toggle Class in React
+
+NOTE: Involves React "refs"
+
+https://stackoverflow.com/questions/36403101/toggle-class-in-react
+
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

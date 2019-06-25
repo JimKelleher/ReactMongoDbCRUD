@@ -1,0 +1,124 @@
+cardstackindex
+
+	getJson(artistId, prefix) {
+
+		var json = "";
+		
+	    var response = get_xml_http_request_via_proxy_server(prefix + artistId);
+
+		// File not found:
+		// "{"Message":"An error has occurred.","ExceptionMessage":"The remote server returned an error: (404) Not Found."
+
+		if (response != "") {
+			json = remove_response_packaging(response);				
+		}
+		
+		return json;
+		
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+cardstackindex
+
+	lookupDetailDataYA(searchArtistId) {
+
+    	// Since we will be modifying the argument, let's make a copy and work with that:
+		var searchArtistIdEdited = searchArtistId;
+
+		this.WDorYA = "YA";
+	
+		// Online - HTML from YouTube:
+		if (globalOnlineData == true) {
+		o
+		o
+		o
+
+		// Offline - JSON from WorkingWeb Database app:
+		} else {
+
+		    if (artist.writeArtists[this.cardStackApp.selectedWriteArtistsIndex].YaReportJson == "") {
+
+				searchArtistIdEdited = replace_all(searchArtistIdEdited, " ", "%20");
+
+				artist.writeArtists[this.cardStackApp.selectedWriteArtistsIndex].YaReportJson =
+					//ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+					this.getJson(
+						//-----------------------------------------------------------------
+					    //searchArtistIdEdited,
+					    //"http://www.workingweb.info/database/ArtistVideo/Get/"
+						//-----------------------------------------------------------------
+						searchArtistIdEdited + ".js",
+					    // NOTE: .JSON files produce 404 (not found) errors:
+					 	"http://www.workingweb.info/database/ArtistVideoTempFix/"
+						//-----------------------------------------------------------------
+					);
+					//ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+				//----------------------------------------------------------------------------------
+				
+				// "{"Message":"An error has occurred.",
+				// "ExceptionMessage":"The remote server returned an error: (500) Internal Server Error.",
+				// "ExceptionType":"System.Net.WebException","StackTrace":"  
+
+				try {
+					var artist_albums_object = JSON.parse(
+						artist.writeArtists[this.cardStackApp.selectedWriteArtistsIndex].YaReportJson
+					);
+					
+				} catch (error) { 
+
+					// invalid JSON: "Unexpected token X in JSON at position 0"
+
+					var xxx = error.message;
+
+				}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+WorkingWebNodeJsServices
+
+function get_xml_http_request(uri) {
+
+    var xml_http_request = new XMLHttpRequest();
+
+    var response = ""; // init
+
+    try {
+        xml_http_request.open("GET", uri, false); // async = false = synchronous
+        xml_http_request.send();
+        response = xml_http_request.responseText;
+    } catch (e) {
+        // Run from client (CORS)
+
+        //e.message=Failed to execute 'send' on 'XMLHttpRequest': Failed to load 'http://www.workingweb.info/Utility/WorkingWebWebServices/api/p
+        //e.name = NetworkError
+
+        debugger;
+        var xxx = e.message;
+        //standard_streams_services.write("error", e.message);
+    }
+
+    return response;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

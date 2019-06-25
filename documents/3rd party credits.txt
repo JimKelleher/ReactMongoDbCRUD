@@ -1,0 +1,95 @@
+
+<===== *** - indicates a major contributer
+
+
+list of all credits
+
+	card stack
+
+		Cameron Bourke - https://github.com/cameronbourke <===== ***
+
+		https://github.com/cameronbourke/react-cardstack
+
+	mongodb
+		Jennifer Bland - https://codeburst.io/@ratracegrad
+
+		https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
+
+		Vaibhav Sharma - https://medium.com/@vsvaibhav2016 <===== ***
+
+		I took this app, with only minor changes/fixes, as the basis of my "artistrest" app running on Heroku.
+		
+		https://medium.com/@vsvaibhav2016/create-crud-application-in-express-js-9b88a5a94299
+
+	icon/buttons
+
+		Catalin Rosu - https://catalin.red/contact/
+
+		https://catalin.red/just-another-awesome-css3-buttons/
+
+	confirm button
+
+		Hakim El Hattab - https://codepen.io/hakimel/
+
+		https://codepen.io/hakimel/pen/ZYRgwB
+
+	deletion animations
+
+		Sara Soueidan - https://www.sarasoueidan.com/
+
+		http://www.sarasoueidan.com/blog/creative-list-effects/
+
+			#1 = drop - didn't work well w/ Card Stack
+			#4 = shrink and disappear - used
+			#5 = swing and drop - didn't work well w/ Card Stack
+
+		https://github.com/saraso2014
+
+	tabs
+
+		Josh Sherman - https://codesandbox.io/u/joshtronic
+
+		orig: https://codesandbox.io/s/3qkj13l4j5
+				
+		https://github.com/joshtronic
+
+	radio button animation
+
+		SodaPop - https://codepen.io/sodapop/
+
+		https://codepen.io/sodapop/pen/GpgEeE/
+
+	dropdown animation
+
+		https://codemyui.com/5-creative-dropdown-effects-lists/
+
+		https://codemyui.com/drop-down-list-with-hover-animation/
+
+		see all 8 styles
+
+			favorite 2 styles
+
+				5 and 8
+
+			favorite style
+
+				5 - I used this
+
+	input animation
+		
+		https://codepen.io/abergin/pen/jIplf
+
+		rounded corners, animation
+
+
+
+
+
+
+
+
+
+
+
+
+

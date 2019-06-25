@@ -1,0 +1,112 @@
+<!-- Responsive design: Portrait: -->
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=.65">
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Artist Database Maintenance</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Used by radioButtonAnimation.css: -->
+    <link rel='stylesheet' type="text/css" href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+    <!-- NOTE: This location is /dist/spinner.js as seen by /dist/bundle.js -->
+    <script src="spinner.js"></script>
+
+    <style>
+
+      /* --------------------------------------------------------------------------- */
+      * {
+        font-family: 'Times New Roman';
+        /* font-size: 20px; */
+      }
+
+      /* This is for debugging positioning: */
+      /* * {
+        border: 1px solid black;
+      } */
+
+      /* ----------------------------------------------------------------------------------------- */
+      :root {
+        --mainColor:   #000000;
+        --accentColor: #000000;
+        --alertColor:  #000000;
+
+        --modal-background: rgba(0,0,0, 0.5);
+
+        --cardstack-width: 513px;
+        --scrollbar-margin: 5px;
+        --cardstack-minus-scrollbar-margin: calc(var(--cardstack-width) - var(--scrollbar-margin));
+      }
+      /* ----------------------------------------------------------------------------------------- */
+
+    </style>
+
+    <script>
+
+      //-----------------------------------------------------------------------------------------
+      var globalOnlineData = true;  // on-line
+      var globalRetrievalError = "";
+      
+      var globalMainColor = "";
+      var globalAccentColor = "";
+      var globalAlertColor = "";
+
+      const NBSP = "\u00A0"; // non-breaking space
+      //-----------------------------------------------------------------------------------------
+      
+      // Responsive web design is an approach that makes web pages render well on a variety of
+      // devices and window or screen sizes.  Search for "responsive".
+      window.addEventListener("orientationchange", function() {
+
+        if(window.orientation == 0) {
+          // Portrait:
+          document.getElementById("viewport").setAttribute("content","initial-scale=.65");
+
+        }  
+        else {
+          // NOTE: It is a known problem that, on changing to landscape mode, the browser
+          // fully zooms the page.  I have seen it documented for both Android and I-Phone.
+          // Unfortunately, non of the solutions suggested worked for me.  In the course of
+          // my debugging, I saw that a simple messagebox somehow short-circuits the problem.
+
+          // Having wasted enough time on this, I will wait a few years, check back, and see
+          // if the problem has been fixed.
+
+          // Landscape:
+          alert("Correcting landscape resizing error...");
+          document.getElementById("viewport").setAttribute("content","initial-scale=1.15");
+
+        }
+
+      }, false);      
+      //---------------------------------------------------------------------------------------------------
+
+    </script>
+
+  </head>
+
+  <body>
+
+      <!-- This spinner stuff must be local otherwise it won't load in time to be of any use: -->
+      <div id="spinner_placeholder"></div>
+      
+      <div id='app' />
+
+    <script>
+
+      show_spinner();
+
+    </script>
+
+<!-- NOTE the "bundle.js" script will be called here.  The Html Webpack Plugin will
+     make this addition to a copy of this HTML page.  See "dist/index.html" for the
+     final result.  If such run code is included in this file, you will end up with
+     two and the whole application tree will render twice (resolved bug). -->
+
+  <script type="text/javascript" src="bundle.js"></script></body>
+  
+</html>

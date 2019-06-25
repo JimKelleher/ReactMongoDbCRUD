@@ -1,0 +1,64 @@
+
+CardStackIndexInstance
+
+	CardStackIndexInstance.artists[]			artistpopup.jsx, cardstack.jsx
+
+	CardStackIndexInstance.setState( artists[] )		artistpopup.jsx, cardstack.jsx
+
+	CardStackIndexInstance.headerClick()			cardstackindex.jsx, DeleteButtonWithConfirm.jsx
+
+
+UNIQUE:
+
+artistpopup.jsx
+cardstack.jsx
+cardstackindex.jsx
+DeleteButtonWithConfirm.jsx
+
+------------------------------------------------------------------------------------------------------------------------------
+
+CardStackInstance
+
+	CardStackInstance.toggleArtistPopupShow()			carddetail.jsx, artistpopup.jsx, 
+
+	CardStackInstance.toggleDeletePopup()			carddetail.jsx
+							DeleteButtonWithConfirm.jsx
+
+	CardStackInstance.deleteSaveProcess()			DeleteButtonWithConfirm.jsx
+
+	CardStackInstance.selselectedArtistId			cardstackindex.jsx, DeleteButtonWithConfirm.jsx
+
+	CardStackInstance.handleCardClick()			cardstackindex.jsx
+
+
+UNIQUE:
+
+carddetail.jsx
+cardstack.jsx
+cardstackindex.jsx
+DeleteButtonWithConfirm.jsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

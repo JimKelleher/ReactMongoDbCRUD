@@ -1,0 +1,33 @@
+
+Functions cardStackAppRerender() and cardStackAppRender() take the
+approach of unmounting, re-creating and rendering the Card Stack from
+scratch every time I need to change it.  Why am I doing this rather than
+simply altering the driver array and re-rendering?
+
+That approach worked perfectly for edit, delete and filter actions.  It did
+not work for the add action.  Adds altered the Card Stack but never did so
+properly.  The Stack remained fixed at the same Card count as when it was
+first created.  This number appeared to be some kind of structural ceiling.
+
+The online literature contradicted itself.  This StackOverflow says that
+dynamically adding children is no big deal:
+
+https://stackoverflow.com/questions/36651583/dynamically-add-child-components-in-react
+
+The structure of the component in the example is very simple, however, 
+nowhere near the complexity of Cameron's Card Stack.  I am uncertain
+whether the problem lies in the React code or the Flexbox code or some
+combination thereof.
+
+The definitive React documentation says the following:  "React elements are
+immutable. Once you create an element, you can’t change its children or attributes."
+
+https://reactjs.org/docs/rendering-elements.html#updating-the-rendered-element
+
+I wasted the better part of a month trying to overcome this limitation but
+was never successful.  I experimented with architectures that employed 
+both techniques.  In the end, since all approaches were equally fast, I
+decided to take the same approach for all actions.  Being in agreement with
+the React documentation was reassuring but, in the end, I wanted a simple
+process that handled all four actions the same way.
+

@@ -1,0 +1,47 @@
+-------------------------------------------------------------------------------------------
+
+ React.js spread:
+
+ "..." are JSX spread attributes.  If you already have props as an object, and you want to 
+
+ pass it in JSX, you can use "..." as a "spread" operator to pass the whole props object. 
+
+
+ These two components are equivalent:
+
+
+
+ function App1() {
+
+   return <Greeting firstName="Ben" lastName="Hector" />;
+
+ }
+
+
+
+ function App2() {
+
+   const props = {firstName: 'Ben', lastName: 'Hector'};
+
+   return <Greeting {...props} />;
+
+ }
+
+
+-------------------------------------------------------------------------------------------
+
+ ES6(ES2015) spread:
+
+
+ let a = [1, 2, 3];
+
+ let b = [...a, 4, 5, 6];
+
+ console.log(b); give the result [1, 2, 3, 4, 5, 6]
+
+
+-------------------------------------------------------------------------------------------
+
+ NOTE: Works for function arguments also.  Very broad topic.
+
+-------------------------------------------------------------------------------------------

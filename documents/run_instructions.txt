@@ -1,0 +1,108 @@
+
+cd C:\a_dev\NodeJS\artistmaint\artistmaint
+
+package.json
+
+  "scripts": {
+    "copy-dist": "copy app\\spinner.js dist",
+    "build": "npm run copy-dist && webpack",
+    "start": "webpack-dev-server --open"
+  },
+
+==========================================================================
+DEVELOPMENT:
+
+command>npm run build
+
+compile output:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+> artistmaint@1.0.0 start C:\a_dev\NodeJS\artistmaint\artistmaint
+> webpack-dev-server --open
+
+i ?wds?: Project is running at http://localhost:8080/
+i ?wds?: webpack output is served from /
+i ?wdm?: wait until bundle finished: /
+                        o
+                        o
+                        o
+                 Asset      Size  Chunks             Chunk Names
+artistmaint192x192.png   104 KiB          [emitted]
+             bundle.js  1.41 MiB    main  [emitted]  main
+           favicon.ico   104 KiB          [emitted]
+            index.html  3.81 KiB          [emitted]
+Entrypoint main = bundle.js
+[0] multi (webpack)-dev-server/client?http://localhost:8080 ./app/index.js 40 bytes {main} [built]
+                        o
+                        o
+                        o
+[./node_modules/webpack-dev-server/client/index.js?http://localhost:8080] [built]
+                        o
+                        o
+                        o
+i ?wdm?: Compiled successfully.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+webpack now autostarts the application at:
+
+	http://localhost:8080/
+
+This app is now "live" and any app saves will be reflected in the running app.
+
+==========================================================================
+PRODUCTION:
+
+command>npm run build
+
+compile output:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+C:\a_dev\NodeJS\artistmaint\artistmaint>npm run build
+
+> artistmaint@1.0.0 build C:\a_dev\NodeJS\artistmaint\artistmaint
+> npm run copy-dist && webpack
+
+> artistmaint@1.0.0 copy-dist C:\a_dev\NodeJS\artistmaint\artistmaint
+> copy app\spinner.js dist
+
+        1 file(s) copied.
+                        o
+                        o
+                        o
+artistmaint192x192.png   104 KiB          [emitted]
+             bundle.js  1.08 MiB    main  [emitted]  main
+           favicon.ico   104 KiB          [emitted]
+            index.html  3.81 KiB          [emitted]
+Entrypoint main = bundle.js
+                        o
+                        o
+                        o
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+saves built application in:
+
+	C:\a_dev\NodeJS\artistmaint\artistmaint\dist
+
+		artistmaint192x192.png
+		bundle.js
+		favicon.ico
+		index.html
+		spinner.js
+
+
+these files should be installed in:
+
+	http://www.workingweb.info/ArtistMaint/
+
+
+
+
+
+
+
+
+
+
+
+
+

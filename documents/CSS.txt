@@ -1,0 +1,16 @@
+
+NOTE: Using IMPORT for standard (not React) CSS files generated a warning message
+(see below) which I had to comment so as to ignore the message.  REQUIRE had no
+such issues.
+
+For this reason only, I replaced all IMPORTs with REQUIREs for CSS files.
+
+I believe that IMPORT is probably the advised method but I didn't like the
+messiness.
+
+-------------------------------------------------------------------------------------
+
+// NOTE: Error message "'bannerCss' is declared but its value is never read." is invalid:
+import * as bannerCss from '../cardstack/banner.css';
+
+require('../modules/AnimatedRadio.css');
